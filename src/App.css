@@ -1,24 +1,21 @@
-/* Desafio Extra: Paleta de Cores */
 :root {
-  --primary-color: #2c3e50;   /* Azul escuro/Chumbo */
-  --secondary-color: #3498db; /* Azul vibrante */
-  --background-color: #ecf0f1; /* Cinza claro */
-  --text-color: #34495e;      /* Cinza escuro */
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --background-color: #ecf0f1;
+  --text-color: #34495e;
   --shadow-color: rgba(0, 0, 0, 0.15);
 }
 
-/* Estrutura e Layout com Flexbox */
 .app-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 40px;
-  gap: 50px; /* Espaçamento entre o formulário e o cartão */
-  flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+  gap: 50px;
+  flex-wrap: wrap;
 }
 
-/* Estilização da Seção do Formulário */
 .form-section {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 30px;
@@ -29,7 +26,7 @@
 }
 
 .form-section h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: var(--primary-color);
   text-align: center;
   margin-bottom: 25px;
@@ -52,7 +49,7 @@
   border: 1px solid #bdc3c7;
   border-radius: 8px;
   margin-bottom: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
@@ -64,7 +61,6 @@
   box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
-/* Estilização da Seção do Cartão */
 .card-section {
   display: flex;
   justify-content: center;
@@ -76,19 +72,18 @@
   background-color: var(--background-color);
   border-radius: 15px;
   box-shadow: 0 10px 30px var(--shadow-color);
-  overflow: hidden; /* Garante que a faixa não "vaze" para fora das bordas arredondadas */
+  overflow: hidden;
   text-align: center;
   transition: transform 0.3s ease;
 }
 
 .profile-card:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
-/* Desafio Extra: Faixa no Cartão */
 .card-banner {
   height: 120px;
-  background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+  background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
   background-size: cover;
   background-position: center;
 }
@@ -96,9 +91,9 @@
 .card-profile-pic {
   width: 140px;
   height: 140px;
-  border-radius: 50%; /* Imagem em formato circular */
+  border-radius: 50%;
   border: 5px solid white;
-  margin-top: -70px; /* Puxa a imagem para cima, sobrepondo a faixa */
+  margin-top: -70px;
   object-fit: cover;
   box-shadow: 0 5px 15px var(--shadow-color);
 }
@@ -107,16 +102,15 @@
   padding: 20px;
 }
 
-/* Desafio Extra: Pelo menos duas fontes diferentes */
 .card-name {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.8rem;
   color: var(--primary-color);
   margin: 15px 0 5px 0;
 }
 
 .card-title {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 1.1rem;
   color: var(--secondary-color);
@@ -124,7 +118,7 @@
 }
 
 .card-bio {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: var(--text-color);
   line-height: 1.6;
   font-size: 0.95rem;
