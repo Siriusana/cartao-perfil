@@ -1,35 +1,115 @@
+/* Paleta de Cores Profissional */
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #3498db;
-  --background-color: #ecf0f1;
-  --text-color: #34495e;
-  --shadow-color: rgba(0, 0, 0, 0.15);
+  --primary-color: #0d2c4b;       /* Azul marinho escuro */
+  --secondary-color: #2980b9;    /* Azul mais vibrante */
+  --background-color: #ffffff;  /* Branco */
+  --text-color: #34495e;        /* Cinza azulado */
+  --light-gray-color: #f8f9fa;  /* Cinza muito claro */
+  --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-in forwards;
+}
+
+/* Tela de Boas-Vindas */
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.welcome-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.welcome-subtitle {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  max-width: 500px;
+  margin-bottom: 2.5rem;
+}
+
+.start-button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  background: linear-gradient(45deg, var(--secondary-color), #3498db);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+.start-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.6);
+}
+
+/* Container Principal da Aplicação */
 .app-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 40px;
-  gap: 50px;
+  gap: 60px;
   flex-wrap: wrap;
 }
 
+/* Seção do Formulário */
 .form-section {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 30px;
+  background-color: var(--background-color);
+  padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px var(--shadow-color);
+  box-shadow: 0 8px 25px var(--shadow-color);
   width: 100%;
-  max-width: 450px;
+  max-width: 480px;
+  border: 1px solid #e0e0e0;
 }
 
 .form-section h1 {
   font-family: "Montserrat", sans-serif;
   color: var(--primary-color);
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .form-section form {
@@ -38,17 +118,18 @@
 }
 
 .form-section label {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: var(--text-color);
   font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .form-section input,
 .form-section textarea {
-  padding: 12px;
-  border: 1px solid #bdc3c7;
+  padding: 15px;
+  border: 1px solid #ced4da;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   transition: border-color 0.3s, box-shadow 0.3s;
@@ -58,7 +139,7 @@
 .form-section textarea:focus {
   outline: none;
   border-color: var(--secondary-color);
-  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+  box-shadow: 0 0 8px rgba(41, 128, 185, 0.3); 
 }
 
 .card-section {
@@ -69,21 +150,23 @@
 
 .profile-card {
   width: 350px;
-  background-color: var(--background-color);
+  background-color: var(--light-gray-color);
   border-radius: 15px;
   box-shadow: 0 10px 30px var(--shadow-color);
   overflow: hidden;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0;
 }
 
 .profile-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .card-banner {
   height: 120px;
-  background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2070&q=80");
   background-size: cover;
   background-position: center;
 }
@@ -99,12 +182,12 @@
 }
 
 .card-content {
-  padding: 20px;
+  padding: 25px;
 }
 
 .card-name {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   color: var(--primary-color);
   margin: 15px 0 5px 0;
 }
@@ -112,9 +195,11 @@
 .card-title {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--secondary-color);
   margin: 0 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .card-bio {

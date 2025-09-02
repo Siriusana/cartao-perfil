@@ -1,15 +1,11 @@
-/* Reseta estilos padrão e define a fonte base */
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif; /* Fonte padrão para o corpo */
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Desafio Extra: Fundo da Página com Imagem */
-  background-image: url('https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');
-  background-size: cover; /* Cobre toda a área */
-  background-position: center; /* Centraliza a imagem */
-  background-attachment: fixed; /* A imagem fica fixa durante o scroll */
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-attachment: fixed; 
   color: #333;
 }
 

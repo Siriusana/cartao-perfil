@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [isStarted, setIsStarted] = useState(false);
+  const [isFadingOut, setIsFadingOut] = useState(false);
+
   const [profile, setProfile] = useState({
     name: "Seu Nome",
     title: "Seu Cargo ou Título",
     bio: "Uma breve biografia sobre você. Fale sobre suas paixões, habilidades e o que te motiva no dia a dia.",
-    profileImage: "https://via.placeholder.com/150",
+    profileImage: "https://i.pravatar.cc/150?img=12", 
   });
 
   const handleInputChange = (event) => {
@@ -16,14 +19,36 @@ function App() {
       [name]: value,
     }));
   };
+  
+  const handleStart = () => {
+    setIsFadingOut(true); 
+    setTimeout(() => {
+      setIsStarted(true); 
+    }, 500); 
+  };
+
+  if (!isStarted) {
+    return (
+      <div className={`welcome-container ${isFadingOut ? 'fade-out' : ''}`}>
+        <h1 className="welcome-title">Criador de Cartão de Perfil</h1>
+        <p className="welcome-subtitle">
+          Crie um cartão de perfil profissional e elegante em segundos.
+        </p>
+        <button className="start-button" onClick={handleStart}>
+          Iniciar
+        </button>
+      </div>
+    );
+  }
+
 
   return (
-    <div className="app-container">
-      {}
+    <div className="app-container fade-in">
+      {/* Seção do Formulário */}
       <div className="form-section">
         <h1>Personalize seu Cartão</h1>
         <form>
-          <label htmlFor="name">Nome do Usuário</label>
+          <label htmlFor="name">Nome Completo</label>
           <input
             type="text"
             id="name"
@@ -49,7 +74,7 @@ function App() {
             name="bio"
             value={profile.bio}
             onChange={handleInputChange}
-            rows="3"
+            rows="4"
             placeholder="Fale um pouco sobre você..."
           />
 
@@ -65,17 +90,17 @@ function App() {
         </form>
       </div>
 
-      {}
+      {/* Seção do Cartão de Perfil */}
       <div className="card-section">
         <div className="profile-card">
-          <div className="card-banner">{}</div>
+          <div className="card-banner"></div>
           <img
             src={profile.profileImage}
             alt="Foto de Perfil"
             className="card-profile-pic"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = "https://via.placeholder.com/150";
+              e.target.src = "https://i.pravatar.cc/150"; 
             }}
           />
           <div className="card-content">
